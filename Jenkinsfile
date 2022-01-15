@@ -18,7 +18,7 @@ node('master') {
     }
 
     stage("Run test in Docker Container") {
-        sh "docker run -t --name ${CONTAINER} ${IMAGE} mvn clean test"
+        sh "docker run -t --name ${CONTAINER} ${IMAGE} mvn clean test -q"
     }
 
 //     stage("Run Selenium Grid Hub and Scaling Node") {
